@@ -1,13 +1,16 @@
 package control;
 
 import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
 
 public class BaseDatos {
 	private String host;   // lugar donde se encuentra el servidor
 	private String dbName;
 	private String dbUser;
 	private String dbPassword;
-	private Connection conexion;
+	private Connection connection;
+	
 
 	public BaseDatos() {
 		super();
@@ -21,6 +24,20 @@ public class BaseDatos {
 		this.dbName = dbName;
 		this.dbUser = dbUser;
 		this.dbPassword = dbPassword;
+		
+		
+		  try {
+			Class.forName("com.mysql.cj.jdbc.Driver");
+			
+			//this.connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/almacen_db?&serverTimezone=UTC&"  + "user=root&password=1q2w3e4r"); //Cadena de conexión
+			//connection = DriverManager.getConnection("jdbc:mysql://localhost/feedback?"  + "user=sqluser&password=sqluserpw");
+			this.connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/almacen_db?"  + "user=root&password=1q2w3e4r"); //Cadena de conexión
+			System.out.println("conectado..");
+		} catch (SQLException e) {
+			System.out.println(e.getMessage());
+		} catch (ClassNotFoundException e) {
+			System.out.println(e.getMessage());
+		}
 	}
 
 

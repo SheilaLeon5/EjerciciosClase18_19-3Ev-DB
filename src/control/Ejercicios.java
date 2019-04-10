@@ -2483,13 +2483,15 @@ public class Ejercicios {
 	public static void main(String[]args){
 		
 		//Ejercicios ejercicios = new Ejercicios();
-		BaseDatos bd = new BaseDatos();
+		BaseDatos bd = new BaseDatos("localhost:3306","almacen_db","root","1q2w3e4r");
 		
 		
+		/*
 		bd.setHost("localhost:3306");
-		bd.setDbName("");
+		bd.setDbName("almacen_db");
 		bd.setDbUser("root");
-		bd.setDbPassword("");
+		bd.setDbPassword("1q2w3e4r");
+		*/
 		
 		
 		
