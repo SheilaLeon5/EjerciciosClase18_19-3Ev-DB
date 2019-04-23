@@ -2464,6 +2464,7 @@ public class Ejercicios {
 	//--------ACTIVIDAD: Recursividad -----------------------------------------20/03/2019
 
 	
+	
 	/*
 	 * public static void traverse(File parentNode, String leftIndent) { if
 	 * (parentNode.isDirectory()) { System.out.println(leftIndent +
@@ -2484,6 +2485,15 @@ public class Ejercicios {
 		
 		//Ejercicios ejercicios = new Ejercicios();
 		BaseDatos bd = new BaseDatos("localhost:3306","almacen_db","root","1q2w3e4r");
+		
+		
+		
+		
+		
+		
+	//	https://www.academia.edu/13669794/Tutorial_JavaFX_8_Espa%C3%B1ol
+	// http://monillo007.blogspot.com/2012/04/conexion-consulta-y-ejecucion-de_19.html	
+		
 		
 		
 		/*
