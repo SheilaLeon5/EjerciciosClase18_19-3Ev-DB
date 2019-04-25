@@ -5,6 +5,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
+
 public class BaseDatos {
 	private String host;   // lugar donde se encuentra el servidor
 	private String dbName;
@@ -32,7 +33,14 @@ public class BaseDatos {
 			
 			//this.connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/almacen_db?&serverTimezone=UTC&"  + "user=root&password=1q2w3e4r"); //Cadena de conexión
 			//connection = DriverManager.getConnection("jdbc:mysql://localhost/feedback?"  + "user=sqluser&password=sqluserpw");
-			this.connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/almacen_db?"  + "user=root&password=1q2w3e4r"); //Cadena de conexión
+			
+			
+			//this.connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/almacen_db?&serverTimezone=UTC&"  + "user=root&password=1q2w3e4r"); //Cadena de conexión
+			
+			this.connection = DriverManager.getConnection("jdbc:mysql://" + host +"/" + dbName + "?&user=" + dbUser + "&password=" + dbPassword + "&serverTimezone=UTC"); //Cadena de conexión
+			
+			
+			
 			System.out.println("conectado..");
 		} catch (SQLException e) {
 			System.out.println(e.getMessage());
@@ -67,6 +75,15 @@ public class BaseDatos {
 	public void setDbPassword(String dbPassword) {
 		this.dbPassword = dbPassword;
 	}
+	public Connection getConnection() {
+		return connection;
+	}
+
+	public void setConnection(Connection connection) {
+		this.connection = connection;
+	}
+	
+	
 
 	
 	
