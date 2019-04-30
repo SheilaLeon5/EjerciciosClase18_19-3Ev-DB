@@ -1,6 +1,6 @@
 package control;
 
-
+import modelo.dao.AccesoDatos;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.BufferedReader;
@@ -2500,10 +2500,9 @@ public class Ejercicios {
 		
 		//Ejercicios ejercicios = new Ejercicios();
 		BaseDatos bd = new BaseDatos("localhost:3306","almacen_db","root","1q2w3e4r");
-		
-		
-		
-		
+		AccesoDatos activitiesDates = new AccesoDatos();
+		activitiesDates.recorreTabla();
+		activitiesDates.insetTeamFromFile("ficheros/equipos.txt");
 		
 		
 	//	https://www.academia.edu/13669794/Tutorial_JavaFX_8_Espa%C3%B1ol
