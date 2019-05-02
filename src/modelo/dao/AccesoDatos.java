@@ -131,7 +131,7 @@ public class AccesoDatos {
 				while (rS.next()) {
 					for (int i = 0; i < header.length; i++) {
 						//System.out.println(rS.getMetaData(header[i]));
-						//System.out.println(rS.getString(header[i]) + "\t\t");
+						//System.out.println(rS.getString(mD.getColumnName(header[i])) + "\t\t");
 					}
 				}
 				rS.close();
