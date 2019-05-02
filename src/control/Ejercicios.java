@@ -2502,7 +2502,10 @@ public class Ejercicios {
 		BaseDatos bd = new BaseDatos("localhost:3306","almacen_db","root","1q2w3e4r");
 		AccesoDatos activitiesDates = new AccesoDatos();
 		activitiesDates.recorreTabla();
-		activitiesDates.insetTeamFromFile("ficheros/equipos.txt");
+		//activitiesDates.insertTeamFromFile("ficheros/equipos.txt");
+		//activitiesDates.getColumnName();
+		activitiesDates.getColumnNameShowInTheTable("liga","equipos");
+		
 		
 		
 	//	https://www.academia.edu/13669794/Tutorial_JavaFX_8_Espa%C3%B1ol
