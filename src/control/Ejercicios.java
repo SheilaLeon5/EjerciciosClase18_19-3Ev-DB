@@ -2499,12 +2499,12 @@ public class Ejercicios {
 	public static void main(String[]args){
 		
 		//Ejercicios ejercicios = new Ejercicios();
-		BaseDatos bd = new BaseDatos("localhost:3306","almacen_db","root","1q2w3e4r");
+		//BaseDatos bd = new BaseDatos("localhost:3306","almacen_db","root","1q2w3e4r");
 		AccesoDatos activitiesDates = new AccesoDatos();
-		activitiesDates.recorreTabla();
-		//activitiesDates.insertTeamFromFile("ficheros/equipos.txt");
+		//activitiesDates.recorreTabla();
+		activitiesDates.insertTeamFromFile("ficheros/equipos.txt");
 		//activitiesDates.getColumnName();
-		activitiesDates.getColumnNameShowInTheTable("liga","equipos");
+		//activitiesDates.getColumnNameShowInTheTable("liga","equipos");
 		
 		
 		
@@ -2529,6 +2529,20 @@ public class Ejercicios {
 		
 		
 /*
+ 
+ 	//25/04/2019--------ACTIVIDAD:Conectarse a una base de datos y mostrar por pantalla -----------------------------------------
+ 	AccesoDatos activitiesDates = new AccesoDatos();
+	activitiesDates.recorreTabla();
+ 
+ 
+ 
+ 
+ 
+ 
+ // ___________________________########### BASE DE DATOS (TERCERA EVALUACIÓN)###########___________________________________________
+  
+  
+ 
  		//27/03/2019--------ACTIVIDAD:Leer dos ficheros ordenados y unirlo en un tercero y ordenarlos -----------------------------------------
  		 try {
 			ejercicios.mezclaFicherosOrdenados("ficheros/rutaf1.txt", "ficheros/rutaf2.txt", "ficheros/rutaf3.txt");

@@ -5,6 +5,7 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
@@ -18,7 +19,6 @@ public class AccesoDatos {
 	//--------ACTIVIDAD: Conectarse a una base de datos y mostrar por pantalla -----------------------------------------
 	//mostrar por consola todos los "actores" (La BD 'Sakila')
 	public void recorreTabla() {
-		
 		//1.-CONECTAR A LA BD
 		try {
 			BaseDatos bd = new BaseDatos("localhost","sakila","root","1q2w3e4r");
@@ -47,6 +47,116 @@ public class AccesoDatos {
 	}
 	
 	
+	
+	//--------ACTIVIDAD: Leer fichero y añadir contenido a tabla -----------------------------------------30/04/2019
+	public void insertTeamFromFile(String teamRoute) {
+
+		
+		try {
+			// preparar que fichero se va a leer
+			BufferedReader file;
+			file = new BufferedReader(new FileReader(teamRoute));
+			String registry;
+			
+
+			//cargar la base de datos
+			BaseDatos db = new BaseDatos("localhost","liga","root","1q2w3e4r");
+			Connection connection = db.getConnection();     //Obtener la conexión
+			Statement stmt = connection.createStatement(); //Para ejecutar la consulta
+			
+
+			
+			// Creamos la tabla 
+			String sqlCreateTable =(
+					"create table equipos(\r\n" + 
+					"    idEquipo int(2) PRIMARY KEY,\r\n" + 
+					"    nombreCorto varchar(5),\r\n" + 
+					"    nombre varchar(10),\r\n" + 
+					"	puntos int(2) default 0,\r\n" + 
+					"	pj int(2) default 0,\r\n" + 
+					"	pg int(2) default 0,\r\n" + 
+					"	pe int(2) default 0,\r\n" + 
+					"	pp int(2) default 0,\r\n" + 
+					"	gf int(2) default 0,\r\n" + 
+					"	gc int(2) default 0\r\n" + 
+					")"
+					+ "");
+
+			stmt.executeUpdate(sqlCreateTable);
+			
+
+			//recorrer fichero y obtener los campos
+			registry = file.readLine();
+			while (registry != null) {
+				String[] fields = registry.split("#");  //separamos una string
+				int idEquipo = Integer.parseInt(fields[0]);
+				String nombreCorto = fields[1];
+				String nombre = fields[2];
+				
+
+
+				String sqlAddDatesTable ="INSERT INTO equipos(idEquipo,nombreCorto,nombre) VALUES ("+idEquipo+",\""+nombreCorto+"\",\""+nombre+"\") ";
+				System.out.println(sqlAddDatesTable);
+				stmt.executeUpdate(sqlAddDatesTable);
+				file.readLine();
+			}
+			
+			file.close();
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+/*	
 	//--------ACTIVIDAD: Leer fichero y añadir contenido a tabla -----------------------------------------30/04/2019
 	public void insertTeamFromFile(String teamRoute) {
 		try {
@@ -161,5 +271,5 @@ public class AccesoDatos {
 	
 	
 	
-
+*/
 }
