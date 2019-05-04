@@ -190,7 +190,7 @@ public class AccesoDatos {
 	
 	
 	
-	
+
 	
 	//--------ACTIVIDAD: Obtener para cualquier tabla un encabezado con el nombre de sus columnas-----------------------------------------02/05/2019
 			public void getTable(String dataBase, String table) {
