@@ -2502,8 +2502,10 @@ public class Ejercicios {
 		//BaseDatos bd = new BaseDatos("localhost:3306","almacen_db","root","1q2w3e4r");
 		AccesoDatos activitiesDates = new AccesoDatos();
 		//activitiesDates.recorreTabla();
-		activitiesDates.insertTeamFromFile("ficheros/equipos.txt");
+		//activitiesDates.insertTeamFromFile("ficheros/equipos.txt");
 		//activitiesDates.getColumnName();
+		activitiesDates.getTable("liga","equipos");
+
 		//activitiesDates.getColumnNameShowInTheTable("liga","equipos");
 		
 		
@@ -2530,12 +2532,26 @@ public class Ejercicios {
 		
 /*
  
+ 
+ 
+ 	//02/05/2019--------ACTIVIDAD: Hacer consulta y obtener nombre columnas -----------------------------------------
+ 	AccesoDatos activitiesDates = new AccesoDatos();
+ 	activitiesDates.getColumnName();
+ 	 
+ 
+ 	//30/04/2019--------ACTIVIDAD: Leer fichero y añadir contenido a tabla (VARIANTE DEL ANTERIOR)-----------------------------------------
+ 	AccesoDatos activitiesDates = new AccesoDatos();
+	activitiesDates.insertTeamFromFile("ficheros/equipos.txt");
+ 	 
+ 	 
+ 	//30/04/2019--------ACTIVIDAD: Leer fichero y añadir contenido a tabla -----------------------------------------
+ 	AccesoDatos activitiesDates = new AccesoDatos();
+	activitiesDates.insertTeamFromFile("ficheros/equipos.txt");
+	
+ 
  	//25/04/2019--------ACTIVIDAD:Conectarse a una base de datos y mostrar por pantalla -----------------------------------------
  	AccesoDatos activitiesDates = new AccesoDatos();
 	activitiesDates.recorreTabla();
- 
- 
- 
  
  
  
