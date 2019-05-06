@@ -219,7 +219,6 @@ public class AccesoDatos {
 			}
 
 	
-	
 
 	// sacar una lista de objetos
 	
