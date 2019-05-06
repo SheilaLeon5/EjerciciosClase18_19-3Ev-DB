@@ -2481,49 +2481,31 @@ public class Ejercicios {
 	
 
 	
-	// ________________________________________################## BASE DE DATOS (TERCERA EVALUACIÓN)#####################____________________________________________
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+
+
 	
 	
 	public static void main(String[]args){
 		
-		//Ejercicios ejercicios = new Ejercicios();
-		//BaseDatos bd = new BaseDatos("localhost:3306","almacen_db","root","1q2w3e4r");
 		AccesoDatos activitiesDates = new AccesoDatos();
-		//activitiesDates.recorreTabla();
-		//activitiesDates.insertTeamFromFile("ficheros/equipos.txt");
-		//activitiesDates.getColumnName();
 		activitiesDates.getTable("liga","equipos");
-
 		//activitiesDates.getColumnNameShowInTheTable("liga","equipos");
 		
 		
 		
-	//	https://www.academia.edu/13669794/Tutorial_JavaFX_8_Espa%C3%B1ol
-	// http://monillo007.blogspot.com/2012/04/conexion-consulta-y-ejecucion-de_19.html	
-		
-		
-		
+		//Ejercicios ejercicios = new Ejercicios();
+		//BaseDatos bd = new BaseDatos("localhost:3306","almacen_db","root","1q2w3e4r");
 		/*
 		bd.setHost("localhost:3306");
 		bd.setDbName("almacen_db");
 		bd.setDbUser("root");
 		bd.setDbPassword("1q2w3e4r");
 		*/
+
 		
-		
-		
+	//	https://www.academia.edu/13669794/Tutorial_JavaFX_8_Espa%C3%B1ol
+	// http://monillo007.blogspot.com/2012/04/conexion-consulta-y-ejecucion-de_19.html	
+
 		 System.out.println("fin");
 		 System.exit(0); // Si hay código debajo no se ejecutará  SOLO HASTA AQUÍ
 	
@@ -2532,11 +2514,16 @@ public class Ejercicios {
 		
 /*
  
+ 	//02/05/2019--------ACTIVIDAD: Obtener para cualquier tabla un encabezado con el nombre de sus columnas(es decir mostrar una tabla)------
+ 	AccesoDatos activitiesDates = new AccesoDatos();
+ 	activitiesDates.getTable("liga","equipos");
+ 
  
  
  	//02/05/2019--------ACTIVIDAD: Hacer consulta y obtener nombre columnas -----------------------------------------
  	AccesoDatos activitiesDates = new AccesoDatos();
  	activitiesDates.getColumnName();
+ 	 
  	 
  
  	//30/04/2019--------ACTIVIDAD: Leer fichero y añadir contenido a tabla (VARIANTE DEL ANTERIOR)-----------------------------------------
@@ -2544,9 +2531,11 @@ public class Ejercicios {
 	activitiesDates.insertTeamFromFile("ficheros/equipos.txt");
  	 
  	 
+ 	 
  	//30/04/2019--------ACTIVIDAD: Leer fichero y añadir contenido a tabla -----------------------------------------
  	AccesoDatos activitiesDates = new AccesoDatos();
 	activitiesDates.insertTeamFromFile("ficheros/equipos.txt");
+	
 	
  
  	//25/04/2019--------ACTIVIDAD:Conectarse a una base de datos y mostrar por pantalla -----------------------------------------
@@ -2556,7 +2545,7 @@ public class Ejercicios {
  
  
  // ___________________________########### BASE DE DATOS (TERCERA EVALUACIÓN)###########___________________________________________
-  
+      
   
  
  		//27/03/2019--------ACTIVIDAD:Leer dos ficheros ordenados y unirlo en un tercero y ordenarlos -----------------------------------------

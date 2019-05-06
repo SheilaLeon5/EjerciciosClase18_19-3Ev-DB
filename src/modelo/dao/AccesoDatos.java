@@ -74,7 +74,7 @@ public class AccesoDatos {
 			}
 		
 			file.close();
-			System.out.println("Fin de la lectura del fichero");
+			System.out.println("\n Fin de la lectura del fichero");
 		} catch (FileNotFoundException excepcion) {
 			System.out.println("fichero no encontrado");
 
@@ -84,12 +84,12 @@ public class AccesoDatos {
 			e.printStackTrace();
 		}
 	}
+
 	
 	
 	
-	
-	/*		
-	
+		
+/*	
 	//--------ACTIVIDAD: Leer fichero y añadir contenido a tabla (VARIANTE DEL ANTERIOR)-----------------------------------------30/04/2019
 	 //En esta actividad hemos creado la tabla
 	public void insertTeamFromFile(String teamRoute) {
@@ -188,11 +188,9 @@ public class AccesoDatos {
 	
 	
 	
-	
-	
 
 	
-	//--------ACTIVIDAD: Obtener para cualquier tabla un encabezado con el nombre de sus columnas-----------------------------------------02/05/2019
+	//--------ACTIVIDAD: Obtener para cualquier tabla un encabezado con el nombre de sus columnas(es decir mostrar una tabla)-----------------------------------------02/05/2019
 			public void getTable(String dataBase, String table) {
 				try {
 					BaseDatos bd = new BaseDatos("localhost",dataBase,"root","1q2w3e4r");
@@ -202,86 +200,27 @@ public class AccesoDatos {
 					ResultSet sql = stmt.executeQuery("select * FROM " + table);
 					ResultSetMetaData mD = sql.getMetaData();
 					
-					
-					
 					for (int i = 1; i < mD.getColumnCount(); i++) {
-						System.out.print("\t"+ mD.getColumnName(i) +  "\t\t\t\t\t");
+						System.out.print(String.format("%1$-30s",mD.getColumnName(i)));
 						
 					}
 					System.out.println("\n");
 					while(sql.next()) {
 						for (int i = 1; i < mD.getColumnCount(); i++) {
-							System.out.print("\t" + sql.getString(i) + "\t\t\t\t\t");
+							System.out.print(String.format("%1$-30s", sql.getString(i)));  //Recupera el valor del indice de columna designado en la fila actual
+							// Añadir espacio String , el guión se quita si los espacios se quieren poner delante--> %1$-24s  
 						}
 						System.out.println("\n");
 					}
 					
-					
-					
 				} catch (SQLException e) {
 					e.printStackTrace();
 				}
-				
 			}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-/*	
-	//--------ACTIVIDAD: Obtener para cualquier tabla un encabezado con el nombre de sus columnas-----------------------------------------02/05/2019
-		public void getColumnNameShowInTheTable(String dataBase, String table) {
-			try {
-				BaseDatos bd = new BaseDatos("localhost",dataBase,"root","1q2w3e4r");
-				Connection conecction = bd.getConnection();
-				Statement stmt = conecction.createStatement(); // permite hacer consultas
-				ResultSet rS = stmt.executeQuery("SELECT * FROM " + table + " WHERE 1");  // Empiezan por numero 1 los resultSet
-				ResultSetMetaData mD = rS.getMetaData(); // COMPROBAR
-				String[] header = null;
-				
-				for (int i = 1; i < mD.getColumnCount(); i++) {
-					System.out.print(mD.getColumnName(i)+ "\t  ");
-					header[i]= mD.getColumnName(i);
-				}
 
-				while (rS.next()) {
-					for (int i = 0; i < header.length; i++) {
-						//System.out.println(rS.getMetaData(header[i]));
-						//System.out.println(rS.getString(mD.getColumnName(header[i])) + "\t\t");
-					}
-				}
-				rS.close();
-				stmt.close();
-				conecction.close();
-				
-				
-			} catch (SQLException e) {
-				e.printStackTrace();
-			} 
-			catch (NullPointerException e) {
-				System.out.println("Error de conexión");
-			}
-		}
-	
-*/	
 	
 	
-	
-	
-	
-	
-	// mostrar todas las columnas y sus datos ?????????????????
+
 	// sacar una lista de objetos
 	
 	//jfx basic example
