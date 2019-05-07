@@ -10,9 +10,10 @@ import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 import java.sql.Statement;
-
+import java.util.ArrayList;
 
 import control.BaseDatos;
+import modelo.Equipo;
 
 public class AccesoDatos {
 
@@ -219,12 +220,47 @@ public class AccesoDatos {
 			}
 
 	
+			
+			
+	public static ArrayList<Equipo> getListObjects(String dataBase, String table){
+		
+		try {
+			//Conetarnos a la BD
+			BaseDatos bd = new BaseDatos("localhost",dataBase,"root","1q2w3e4r");
+			Connection connection= bd.getConnection();
+			Statement stmt = connection.createStatement();
+			ResultSet sql = stmt.executeQuery("SELECT * from " + table);
+			
+	
+			
+			for (int i = 0; i < sql.getRow(); i++) {
+				for (int j = 0; j < sql.getMetaData().getColumnCount(); j++) {
+					System.out.println(j);
+				}
+
+			}
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		 
+		return null;
+		
+	}
+			
+			
 
 	// sacar una lista de objetos
 	
 	//jfx basic example
 	
-	
+	/*
+	 
+	  https://docs.oracle.com/javase/8/javafx/get-started-tutorial/get_start_apps.htm#JFXST804
+	  
+	  
+	 
+	 */
 	
 
 }

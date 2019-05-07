@@ -2488,7 +2488,8 @@ public class Ejercicios {
 	public static void main(String[]args){
 		
 		AccesoDatos activitiesDates = new AccesoDatos();
-		activitiesDates.getTable("liga","equipos");
+		activitiesDates.getListObjects("liga", "equipos");
+		//activitiesDates.getTable("liga","equipos");
 		//activitiesDates.getColumnNameShowInTheTable("liga","equipos");
 		
 		
@@ -2513,6 +2514,10 @@ public class Ejercicios {
 		
 		
 /*
+ 
+ 
+ 
+ 
  
  	//02/05/2019--------ACTIVIDAD: Obtener para cualquier tabla un encabezado con el nombre de sus columnas(es decir mostrar una tabla)------
  	AccesoDatos activitiesDates = new AccesoDatos();
