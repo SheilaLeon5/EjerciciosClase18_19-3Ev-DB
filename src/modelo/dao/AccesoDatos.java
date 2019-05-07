@@ -221,7 +221,7 @@ public class AccesoDatos {
 
 	
 			
-			
+//--------ACTIVIDAD: Obtener una lista de objetos recorriendo tabla de BD (POR MI CUENTA)-----------------------------------------07/05/2019		
 	public static ArrayList<Equipo> getListObjects(String dataBase, String table){
 		
 		try {
@@ -231,21 +231,30 @@ public class AccesoDatos {
 			Statement stmt = connection.createStatement();
 			ResultSet sql = stmt.executeQuery("SELECT * from " + table);
 			
-	
+			ArrayList<Equipo> list = new ArrayList<Equipo>();
+			int idEquipo = 0;
+			String nombreCorto = null;
+			String nombre = null;
 			
-			for (int i = 0; i < sql.getRow(); i++) {
-				for (int j = 0; j < sql.getMetaData().getColumnCount(); j++) {
-					System.out.println(j);
+			while(sql.next()) {
+				for (int i = 1; i < sql.getMetaData().getColumnCount(); i++) {  //Recorro toda la fila aunque no necesite todos los datos
+					//System.out.println(sql.getString(i));
+					 idEquipo = Integer.parseInt(sql.getString(1));
+					 nombreCorto = sql.getString(2);
+					 nombre = sql.getString(3);	
 				}
-
+			list.add(new Equipo(idEquipo,nombreCorto,nombre));
+			//System.out.println(list);
+			}
+			
+			for (Equipo equipo : list) {
+				System.out.println(equipo);
 			}
 			
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-		 
 		return null;
-		
 	}
 			
 			
@@ -255,10 +264,7 @@ public class AccesoDatos {
 	//jfx basic example
 	
 	/*
-	 
 	  https://docs.oracle.com/javase/8/javafx/get-started-tutorial/get_start_apps.htm#JFXST804
-	  
-	  
 	 
 	 */
 	

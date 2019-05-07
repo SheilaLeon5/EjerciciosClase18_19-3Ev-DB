@@ -2488,7 +2488,8 @@ public class Ejercicios {
 	public static void main(String[]args){
 		
 		AccesoDatos activitiesDates = new AccesoDatos();
-		activitiesDates.getListObjects("liga", "equipos");
+		ArrayList<Equipo> result = activitiesDates.getListObjects("liga", "equipos");
+
 		//activitiesDates.getTable("liga","equipos");
 		//activitiesDates.getColumnNameShowInTheTable("liga","equipos");
 		
@@ -2515,7 +2516,9 @@ public class Ejercicios {
 		
 /*
  
- 
+ 	//07/05/2019--------ACTIVIDAD: Obtener una lista de objetos recorriendo tabla de BD (POR MI CUENTA)-----------------------------------------		
+	AccesoDatos activitiesDates = new AccesoDatos();
+	activitiesDates.getListObjects("liga", "equipos");
  
  
  
