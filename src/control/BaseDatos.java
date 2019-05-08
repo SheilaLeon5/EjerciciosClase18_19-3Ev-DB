@@ -21,6 +21,7 @@ public class BaseDatos {
 	}
 	
 	
+	
 	public BaseDatos(String host, String dbName, String dbUser, String dbPassword) {
 		super();
 		this.host = host;
