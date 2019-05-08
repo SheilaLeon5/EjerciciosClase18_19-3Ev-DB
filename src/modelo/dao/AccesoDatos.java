@@ -257,9 +257,26 @@ public class AccesoDatos {
 		return null;
 	}
 			
-			
-
-	// sacar una lista de objetos
+	
+	
+	
+//--------ACTIVIDAD: validar login del 'miprimerFXML' consultando los usuarios en la BD -----------------------------------------08/05/2019			
+	public static boolean validateLogin(String usr, String pass) {
+		//conectar BD
+		//preparar consulta BD liga -> tabla 'usuarios'
+		//como saber si existe o no
+		
+		
+		
+		
+		return false;
+	}
+	
+	
+	
+	
+	
+	
 	
 	//jfx basic example
 	
