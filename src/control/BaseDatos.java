@@ -6,6 +6,7 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 
+
 public class BaseDatos {
 	private String host;   // lugar donde se encuentra el servidor
 	private String dbName;
