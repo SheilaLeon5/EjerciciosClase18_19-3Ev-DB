@@ -303,6 +303,20 @@ public class AccesoDatos {
 	  https://docs.oracle.com/javase/8/javafx/get-started-tutorial/get_start_apps.htm#JFXST804
 	 
 	 */
+	/*
+	 * ACTIVIDADES PROXIMAS:
+	 * -------modelo
+	 * - crear tabla jugadores2
+	 * - crear tabla a partir de jugadores2.txt
+	 * - implementar un método que devuelva una lista/mapa de todos los Equipos a partir de la tabla equipos.
+	 * - implementar un método que devuelva una lista/mapa de todos los Jugadores de un equipo dado
+	 * 
+	 * 
+	 * 
+	 * --vista
+	 * 1. Eb yn control (ListVient, TableView..) , cargar los jugadores de un equipo seleccionado en el comboBox
+	 * 
+	 */
 	
 
 }

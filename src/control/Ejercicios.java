@@ -2083,7 +2083,7 @@ public class Ejercicios {
 	
 	// --------ACTIVIDAD: Obtener un ArrayList(Lista) de todos los equipos  ------------------------------------------------------- 12/03/2019
 						//(Modificar la actividad: CreamapaEquipos)
-	public ArrayList<Equipo> crearListaEquipos(String rutaFichero){
+	public static ArrayList<Equipo> crearListaEquipos(String rutaFichero){
 		try {
 			BufferedReader fichero;
 			fichero = new BufferedReader(new FileReader(rutaFichero));

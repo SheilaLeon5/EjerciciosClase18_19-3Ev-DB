@@ -38,19 +38,24 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-
 public class ComboExample extends Application {
     
-    public static void main(String[] args) {
-        Application.launch(ComboExample.class, args);
-    }
-    
-    @Override
-    public void start(Stage stage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("fxml_example.fxml"));
-        
-        stage.setTitle("Carga de equipos en un Combo");
-        stage.setScene(new Scene(root, 300, 275));
-        stage.show();
-    }
+	@Override
+	public void start(Stage stage) throws Exception {
+
+	    FXMLLoader loader = new FXMLLoader(getClass().getResource("combo.fxml"));
+	    Parent root = loader.load();
+
+	    ComboExampleController myController = loader.getController();
+
+	    Scene scene = new Scene(root);
+	    stage.setScene(scene);
+	    stage.show();
+
+	    //Set Data to FXML through controller
+	    myController.cargaEquipos();
+	}
+	  public static void main(String[] args) {
+	    launch(args);
+	}
 }
