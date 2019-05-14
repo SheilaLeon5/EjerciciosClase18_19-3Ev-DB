@@ -34,21 +34,45 @@ package control;
  
 
 
+import com.mysql.cj.Query;
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
+import modelo.dao.AccesoDatos;
  
 public class FXMLExampleController {
     @FXML private Text actiontarget;
+    @FXML private Text mensaje;
     @FXML private TextField usr;
     @FXML private PasswordField pass;
     
     
     @FXML protected void handleSubmitButton_Action(ActionEvent event) {
-    	String texto= usr.getText() + " /" + pass.getText();
-       actiontarget.setText(texto);
+    	
+
+    	
+//14/05/2019--------validar login del 'miprimerFXML' consultando los usuarios en la BD -----------------------------------------
+   /*
+    * El método devuelve un boolean si existe usuario en la BD  y mostraremos un mensaje distinto en caso contrario 	
+    */
+    	
+    	boolean query = AccesoDatos.validateLogin(usr.getText(), pass.getText());
+    	if (query == false) {
+    		String texto= usr.getText() + " /" + pass.getText() +"  INCORRECTO";
+    	    actiontarget.setText(texto);
+		}else {
+			//System.out.println("ACCESO PERMITIDO");
+			mensaje.setText("ACCESO PERMITIDO");
+			
+		}
+    	
+    	
+    	
+    	//String texto= usr.getText() + " /" + pass.getText();
+       //actiontarget.setText(texto);
  
     }
     

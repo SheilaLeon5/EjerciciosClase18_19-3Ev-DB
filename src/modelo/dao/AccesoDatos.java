@@ -260,15 +260,34 @@ public class AccesoDatos {
 	
 	
 	
-//--------ACTIVIDAD: validar login del 'miprimerFXML' consultando los usuarios en la BD -----------------------------------------08/05/2019			
+//--------ACTIVIDAD: validar login del 'miprimerFXML' consultando los usuarios en la BD -----------------------------------------14/05/2019			
 	public static boolean validateLogin(String usr, String pass) {
 		//conectar BD
 		//preparar consulta BD liga -> tabla 'usuarios'
 		//como saber si existe o no
 		
-		
-		
-		
+		try {
+			BaseDatos bd = new BaseDatos("localhost","usuariosDB","root","1q2w3e4r");
+			Connection connection= bd.getConnection();
+			Statement stmt = connection.createStatement();
+			String query = "SELECT * from login where usuario like '" +  usr  + "' and contrasena like '" + pass + "'";
+			ResultSet sql = stmt.executeQuery(query);
+			
+			int contador = 0;
+			while(sql.next()) {
+				contador++;
+				//System.out.println(query);
+			}
+			if (contador == 0) {
+				return false;
+			}
+			return true;
+			
+			
+		}catch (SQLException e) {
+			e.printStackTrace();
+		}
+
 		return false;
 	}
 	

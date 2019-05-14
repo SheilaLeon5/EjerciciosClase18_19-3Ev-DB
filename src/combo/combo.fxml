@@ -62,9 +62,6 @@
   </HBox>
   
   <Text fx:id="actiontarget" GridPane.columnIndex="1" GridPane.rowIndex="6" />
-  <Text fx:id="mensaje" GridPane.columnIndex="1" GridPane.rowIndex="6" />
-  
-  
   
   <stylesheets>
     <URL value="@Login.css" />

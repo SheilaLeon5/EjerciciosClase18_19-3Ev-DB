@@ -30,28 +30,26 @@
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-package control;
+package combo;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-import modelo.dao.AccesoDatos;
 
 
-public class FXMLExample extends Application {
+public class ComboExample extends Application {
     
     public static void main(String[] args) {
-        Application.launch(FXMLExample.class, args);
-        
+        Application.launch(ComboExample.class, args);
     }
     
     @Override
     public void start(Stage stage) throws Exception {
         Parent root = FXMLLoader.load(getClass().getResource("fxml_example.fxml"));
         
-        stage.setTitle("FXML Welcome");
+        stage.setTitle("Carga de equipos en un Combo");
         stage.setScene(new Scene(root, 300, 275));
         stage.show();
     }
