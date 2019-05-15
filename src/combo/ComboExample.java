@@ -46,7 +46,7 @@ public class ComboExample extends Application {
 	    FXMLLoader loader = new FXMLLoader(getClass().getResource("combo.fxml"));
 	    Parent root = loader.load();
 
-	    ComboExampleController myController = loader.getController();
+	    ComboController myController = loader.getController();
 
 	    Scene scene = new Scene(root);
 	    stage.setScene(scene);

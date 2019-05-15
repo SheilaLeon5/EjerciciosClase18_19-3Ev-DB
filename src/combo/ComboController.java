@@ -10,7 +10,7 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.text.Text;
 import modelo.Equipo;
 
-public class ComboExampleController  {
+public class ComboController  {
 	@FXML
 	private ComboBox<Equipo> miCombo;
 

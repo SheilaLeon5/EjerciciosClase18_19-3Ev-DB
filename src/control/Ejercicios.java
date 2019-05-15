@@ -2488,7 +2488,10 @@ public class Ejercicios {
 	public static void main(String[]args){
 		
 		AccesoDatos activitiesDates = new AccesoDatos();
+		ArrayList<Equipo> result = activitiesDates.getListTeamsObjects("liga", "equipos");
+
 		
+		//activitiesDates.getTablePlayers("usuariosdb", "jugadores");
 		//ArrayList<Equipo> result = activitiesDates.getListObjects("liga", "equipos");
 
 		//activitiesDates.getTable("liga","equipos");
@@ -2517,6 +2520,23 @@ public class Ejercicios {
 		
 /*
  
+ 	//15/05/2019--------ACTIVIDAD: Obtener una lista de objetos de equipos recorriendo tabla de BD-----------------------------------------		
+	AccesoDatos activitiesDates = new AccesoDatos();
+	ArrayList<Equipo> result = activitiesDates.getListTeamsObjects("liga", "equipos");
+
+ 
+ 	//15/05/2019--------ACTIVIDAD: Obtener para cualquier tabla un encabezado con el nombre de sus columnas(es decir mostrar una tabla)-----------------------------------------
+ 	AccesoDatos activitiesDates = new AccesoDatos();
+ 	activitiesDates.getTablePlayers("usuariosdb", "jugadores");
+ 
+ 
+ 
+ 	//15/05/2019--------ACTIVIDAD: Insertar datos desde fichero a tabla de la bd -----------------------------------------
+	AccesoDatos activitiesDates = new AccesoDatos();
+	activitiesDates.insertPlayersFromFile("ficheros/jugadores2.txt");	
+
+
+
  	//07/05/2019--------ACTIVIDAD: Obtener una lista de objetos recorriendo tabla de BD (POR MI CUENTA)-----------------------------------------		
 	AccesoDatos activitiesDates = new AccesoDatos();
 	activitiesDates.getListObjects("liga", "equipos");

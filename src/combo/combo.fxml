@@ -6,7 +6,7 @@
 <?import javafx.scene.text.Font?>
 
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1 fx:controller="combo.ComboExampleController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1 fx:controller="combo.ComboController">
    <children>
       <ComboBox layoutX="41.0" layoutY="126.0" prefWidth="150.0" />
       <Label layoutX="175.0" layoutY="43.0" text="Equipos de fútbol" textFill="#3b9ce3">

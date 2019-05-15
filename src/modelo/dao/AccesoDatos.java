@@ -293,6 +293,131 @@ public class AccesoDatos {
 	
 	
 	
+//--------ACTIVIDAD: Insertar datos desde fichero a tabla de la bd -----------------------------------------15/05/2019			
+	public void insertPlayersFromFile(String playersRoute) {
+	
+			
+			try {
+				// preparar que fichero se va a leer
+				BufferedReader file;
+				file = new BufferedReader(new FileReader(playersRoute));
+				String registry;
+				
+	
+				//cargar la base de datos
+				BaseDatos db = new BaseDatos("localhost","usuariosdb","root","1q2w3e4r");
+				Connection connection = db.getConnection();     //Obtener la conexión
+				Statement stmt = connection.createStatement(); //Para ejecutar la consulta
+				
+	
+				//recorrer fichero y obtener los campos
+				registry = file.readLine();
+				while (registry != null) {
+					String[] fields = registry.split("#");  //separamos una string
+					int idJugador = Integer.parseInt(fields[0]);
+					String nombre = fields[1];
+					String dorsal = fields[2];
+					int idEquipo = Integer.parseInt(fields[3]);
+					
+	
+	
+					String sqlAddDatesTable ="INSERT INTO jugadores(id,nombre,dorsal,idEquipo) VALUES ("+ idJugador +",\""+nombre+"\","+dorsal+","+idEquipo+") ";
+					//System.out.println(sqlAddDatesTable);
+					stmt.executeUpdate(sqlAddDatesTable);
+					registry= file.readLine();
+				}
+				
+				file.close();
+			} catch (FileNotFoundException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+	
+
+	//--------ACTIVIDAD: Obtener para cualquier tabla un encabezado con el nombre de sus columnas(es decir mostrar una tabla)-----------------------------------------15/05/2019
+	public void getTablePlayers(String dataBase, String table) {
+		try {
+			BaseDatos bd = new BaseDatos("localhost",dataBase,"root","1q2w3e4r");
+			Connection conecction = bd.getConnection();
+			Statement stmt;
+			stmt = conecction.createStatement();
+			ResultSet sql = stmt.executeQuery("select * FROM " + table);
+			ResultSetMetaData mD = sql.getMetaData();
+			
+			for (int i = 1; i <= mD.getColumnCount(); i++) {
+				System.out.print(String.format("%1$-30s",mD.getColumnName(i)));
+				
+			}
+			System.out.println("\n");
+			while(sql.next()) {
+				for (int i = 1; i <= mD.getColumnCount(); i++) {
+					System.out.print(String.format("%1$-30s", sql.getString(i)));  //Recupera el valor del indice de columna designado en la fila actual
+					// Añadir espacio String , el guión se quita si los espacios se quieren poner delante--> %1$-24s  
+				}
+				System.out.println("\n");
+			}
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	
+	
+	
+	
+	//--------ACTIVIDAD: Obtener una lista de objetos de equipos recorriendo tabla de BD-----------------------------------------15/05/2019		
+		public static ArrayList<Equipo> getListTeamsObjects(String dataBase, String table){
+			ArrayList<Equipo> list = new ArrayList<Equipo>();
+			try {
+				//Conetarnos a la BD
+				BaseDatos bd = new BaseDatos("localhost",dataBase,"root","1q2w3e4r");
+				Connection connection= bd.getConnection();
+				Statement stmt = connection.createStatement();
+				ResultSet sql = stmt.executeQuery("SELECT * from " + table);
+				
+				//ArrayList<Equipo> list = new ArrayList<Equipo>();
+				int id = 0;
+				String nombreCorto = null;
+				String nombre = null;
+				
+				while(sql.next()) {
+					for (int i = 1; i < sql.getMetaData().getColumnCount(); i++) {  //Recorro toda la fila aunque no necesite todos los datos
+						//System.out.println(sql.getString(i));
+						 id= Integer.parseInt(sql.getString(1));
+						 nombreCorto = sql.getString(2);
+						 nombre = sql.getString(3);
+						 
+					}
+				list.add(new Equipo(id,nombreCorto,nombre));
+				//System.out.println(list);
+				}
+				
+				for (Equipo equipo : list) {
+					System.out.println(equipo);
+				}
+				
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+			return list;
+		}
+	
+	
+	
+	//--------ACTIVIDAD: Obtener una lista de jugadores determinado -----------------------------------------15/05/2019		
+	
+	
+	
+	
+	
 	
 	
 	
