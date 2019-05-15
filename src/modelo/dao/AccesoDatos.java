@@ -14,6 +14,7 @@ import java.util.ArrayList;
 
 import control.BaseDatos;
 import modelo.Equipo;
+import modelo.Jugador;
 
 public class AccesoDatos {
 
@@ -395,6 +396,7 @@ public class AccesoDatos {
 						 nombreCorto = sql.getString(2);
 						 nombre = sql.getString(3);
 						 
+						 
 					}
 				list.add(new Equipo(id,nombreCorto,nombre));
 				//System.out.println(list);
@@ -413,9 +415,181 @@ public class AccesoDatos {
 	
 	
 	//--------ACTIVIDAD: Obtener una lista de jugadores determinado -----------------------------------------15/05/2019		
+		public static ArrayList<Jugador> getPlayersByTeams(String dataBase, String table, int idTeam){
+			ArrayList<Jugador> list = new ArrayList<Jugador>();
+			try {
+				//Conetarnos a la BD
+				BaseDatos bd = new BaseDatos("localhost",dataBase,"root","1q2w3e4r");
+				Connection connection= bd.getConnection();
+				Statement stmt = connection.createStatement();
+				ResultSet sql = stmt.executeQuery("SELECT * from " + dataBase + "."+ table + " WHERE idEquipo=" + idTeam );
+
+				
+				//ArrayList<Equipo> list = new ArrayList<Equipo>();
+				int id = 0;
+				String nombre = null;
+				int dorsal = 0;
+				int idEquipo = 0;
+				while(sql.next()) {
+					for (int i = 1; i < sql.getMetaData().getColumnCount(); i++) {  //Recorro toda la fila aunque no necesite todos los datos
+						//System.out.println(sql.getString(i));
+						 id= Integer.parseInt(sql.getString(1));
+						 nombre = sql.getString(2);
+						 dorsal = Integer.parseInt(sql.getString(3));
+						 idEquipo = Integer.parseInt(sql.getString(4));
+						 
+						 
+					}
+			//	list.add(new Jugador(null,nombre,null,null,null,id,dorsal,idEquipo));
+				//System.out.println(list);
+				}
+				
+				for (Equipo equipo : list) {
+					System.out.println(equipo);
+				}
+				
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+			return list;
+		}
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 	
 	
-	
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		/*
+		 
+		 
+		 
+		 
+		 
+		 
+		 
+		 public ArrayList<Equipo> crearListadoEquiposDesdeBBDD(String bddatos, String tabla){
+		ArrayList<Equipo> listadoEquipos = new ArrayList<Equipo>();
+		try {
+			BaseDatos bd = new BaseDatos("localhost:3306",  bddatos, "root", "");
+			Connection conexion = bd.getConexion();
+			Statement stmt = conexion.createStatement();
+			ResultSet rst = stmt.executeQuery("select * from " + tabla + " where 1;");
+			ResultSetMetaData rstMeta = rst.getMetaData(); // 
+			rstMeta.getColumnCount(); 
+			while(rst.next()) { // devuelve una linea de la consulta, es decir, una fila de la tabla		
+				int id = Integer.parseInt(rst.getString(1));
+				String nombreCorto = rst.getString(2);
+				String nombre = rst.getString(3);
+				int pj = Integer.parseInt(rst.getString(4));
+				int puntos = Integer.parseInt(rst.getString(5));
+				int pg = Integer.parseInt(rst.getString(6));
+				int pe = Integer.parseInt(rst.getString(7));
+				int pp = Integer.parseInt(rst.getString(8));
+				int gf = Integer.parseInt(rst.getString(9));
+				int gc = Integer.parseInt(rst.getString(10));
+				Equipo equipo = new Equipo(id, nombreCorto, nombre, pj, puntos, pg, pe, pp, gf, gc);
+				listadoEquipos.add(equipo);			
+			}
+			for(int i = 0; i < listadoEquipos.size(); i++) {
+				 Equipo unEquipo = listadoEquipos.get(i);			
+					System.out.println(unEquipo.getId() + " --> " + unEquipo.getNombreCorto() + " --> " + 
+				 unEquipo.getNombre() + " --> " + unEquipo.getPj() + " --> " + unEquipo.getPuntos() + " --> " + 
+							unEquipo.getPg() + " --> " + unEquipo.getPe() + " --> " + unEquipo.getPp() + " --> " + 
+				 unEquipo.getGf() + " --> " + unEquipo.getGc());					
+			}	
+			rst.close();
+			stmt.close();
+			conexion.close();
+		} catch (SQLException e) {
+			System.out.println(e.getMessage());
+		}catch (NullPointerException e) {
+			System.out.println(e.getMessage());
+		}
+		return listadoEquipos;
+	}
+  
+  
+  
+  e.setId(rS.getInt("id"));
+				e.setNombre(rS.getString("nombre"));
+				e.setGc(rS.getInt("pj"));
+				e.setGf(rS.getInt("puntos"));
+				e.setPe(rS.getInt("pg"));
+				e.setPg(rS.getInt("pj"));
+				e.setPp(rS.getInt("pp"));				
+				e.setGf(rS.getInt("gf"));
+				e.setGc(rS.getInt("gc"));
+		 
+		 
+		 
+		 
+		 
+		 
+		 
+		 
+		 
+		 
+		 
+		 
+		 */
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 	
 	
 	
