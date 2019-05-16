@@ -306,7 +306,7 @@ public class AccesoDatos {
 				
 	
 				//cargar la base de datos
-				BaseDatos db = new BaseDatos("localhost","usuariosdb","root","1q2w3e4r");
+				BaseDatos db = new BaseDatos("localhost","liga","root","1q2w3e4r");
 				Connection connection = db.getConnection();     //Obtener la conexión
 				Statement stmt = connection.createStatement(); //Para ejecutar la consulta
 				
@@ -430,22 +430,29 @@ public class AccesoDatos {
 				String nombre = null;
 				int dorsal = 0;
 				int idEquipo = 0;
+				
+				
 				while(sql.next()) {
-					for (int i = 1; i < sql.getMetaData().getColumnCount(); i++) {  //Recorro toda la fila aunque no necesite todos los datos
+					for (int i = 1; i < sql.getMetaData().getColumnCount(); i++) {  
 						//System.out.println(sql.getString(i));
 						 id= Integer.parseInt(sql.getString(1));
 						 nombre = sql.getString(2);
 						 dorsal = Integer.parseInt(sql.getString(3));
 						 idEquipo = Integer.parseInt(sql.getString(4));
 						 
-						 
 					}
-			//	list.add(new Jugador(null,nombre,null,null,null,id,dorsal,idEquipo));
+					Jugador jugador = new Jugador();
+					jugador.setIdJugador(id);
+					jugador.setNombre(nombre);
+					jugador.setDorsal(dorsal);
+					jugador.setCodigoEquipo(idEquipo);
+					
+					list.add(jugador);
 				//System.out.println(list);
 				}
 				
-				for (Equipo equipo : list) {
-					System.out.println(equipo);
+				for (Jugador jugador : list) {
+					System.out.println(jugador);
 				}
 				
 			} catch (SQLException e) {
@@ -458,43 +465,10 @@ public class AccesoDatos {
 		
 		
 		
-		
-		
-		
-		
-		
-		
-	
-	
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
+
 		
 		
 		/*
-		 
-		 
-		 
-		 
-		 
-		 
 		 
 		 public ArrayList<Equipo> crearListadoEquiposDesdeBBDD(String bddatos, String tabla){
 		ArrayList<Equipo> listadoEquipos = new ArrayList<Equipo>();
@@ -548,15 +522,7 @@ public class AccesoDatos {
 				e.setPp(rS.getInt("pp"));				
 				e.setGf(rS.getInt("gf"));
 				e.setGc(rS.getInt("gc"));
-		 
-		 
-		 
-		 
-		 
-		 
-		 
-		 
-		 
+
 		 
 		 
 		 

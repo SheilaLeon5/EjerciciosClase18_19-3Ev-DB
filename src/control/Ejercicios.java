@@ -2488,12 +2488,11 @@ public class Ejercicios {
 	public static void main(String[]args){
 		
 		AccesoDatos activitiesDates = new AccesoDatos();
+
+		ArrayList<Jugador> players = activitiesDates.getPlayersByTeams("liga", "jugadores", 4);
+		
 		//ArrayList<Equipo> result = activitiesDates.getListTeamsObjects("liga", "equipos");
 
-		
-		
-		ArrayList<Equipo> result = activitiesDates.getListTeamsObjects("liga", "equipos");
-		
 		
 		
 		//activitiesDates.getTablePlayers("usuariosdb", "jugadores");
@@ -2524,11 +2523,17 @@ public class Ejercicios {
 		
 		
 /*
+ 	//15/05/2019--------ACTIVIDAD: Obtener una lista de jugadores determinado -----------------------------------------
+	AccesoDatos activitiesDates = new AccesoDatos();
+	ArrayList<Jugador> players = activitiesDates.getPlayersByTeams("liga", "jugadores", 4);
+ 
+ 
  
  	//15/05/2019--------ACTIVIDAD: Obtener una lista de objetos de equipos recorriendo tabla de BD-----------------------------------------		
 	AccesoDatos activitiesDates = new AccesoDatos();
 	ArrayList<Equipo> result = activitiesDates.getListTeamsObjects("liga", "equipos");
 
+ 
  
  	//15/05/2019--------ACTIVIDAD: Obtener para cualquier tabla un encabezado con el nombre de sus columnas(es decir mostrar una tabla)-----------------------------------------
  	AccesoDatos activitiesDates = new AccesoDatos();
