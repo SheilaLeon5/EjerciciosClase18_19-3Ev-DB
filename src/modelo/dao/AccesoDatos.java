@@ -576,6 +576,8 @@ public class AccesoDatos {
 	 * - implementar un método que devuelva una lista/mapa de todos los Jugadores de un equipo dado
 	 * 
 	 * 
+	 * - hacer un mapa de equipo V(Equipo) y K (nombre corto) obteniendo los datos de la base de datos
+	 * - algo sobre métodos de clasificacion
 	 * 
 	 * --vista
 	 * 1. Eb yn control (ListVient, TableView..) , cargar los jugadores de un equipo seleccionado en el comboBox

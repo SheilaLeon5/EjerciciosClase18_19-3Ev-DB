@@ -2489,7 +2489,7 @@ public class Ejercicios {
 		
 		AccesoDatos activitiesDates = new AccesoDatos();
 
-		ArrayList<Jugador> players = activitiesDates.getPlayersByTeams("liga", "jugadores", 4);
+		//ArrayList<Jugador> players = activitiesDates.getPlayersByTeams("liga", "jugadores", 4);
 		
 		//ArrayList<Equipo> result = activitiesDates.getListTeamsObjects("liga", "equipos");
 
