@@ -2118,7 +2118,7 @@ public class Ejercicios {
 	return null;
 }
 	// MISMA ACTIVIDAD ANTERIOR PERO CON OBJETO
-	public ArrayList<Equipo> crearListaEquipos2(String rutaFichero){
+	public static ArrayList<Equipo> crearListaEquipos2(String rutaFichero){
 		try {
 			BufferedReader fichero;
 			fichero = new BufferedReader(new FileReader(rutaFichero));
