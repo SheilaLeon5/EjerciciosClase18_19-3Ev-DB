@@ -579,6 +579,8 @@ public class AccesoDatos {
 	 * - hacer un mapa de equipo V(Equipo) y K (nombre corto) obteniendo los datos de la base de datos
 	 * - algo sobre métodos de clasificacion
 	 * 
+	 * - generaClasificacion(String String) --> en vez de recorrer ficheros , recorrer tabla bd
+	 * 
 	 * --vista
 	 * 1. Eb yn control (ListVient, TableView..) , cargar los jugadores de un equipo seleccionado en el comboBox
 	 * 

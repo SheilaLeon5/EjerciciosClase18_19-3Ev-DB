@@ -15,14 +15,14 @@ public class ComboEjemplo extends Application {
 //
 	    FXMLLoader loader = new FXMLLoader(getClass().getResource("combo.fxml"));
 	    Parent root = loader.load();
-
 	    ComboController myController = loader.getController();
-	   // ComboBox<Equipo> combo_box = new ComboBox<Equipo>();
-	    //combo_box.getItems().addAll(Ejercicios.crearListaEquipos2("ficheros/equipos.txt"));
 	    
 	    Scene scene = new Scene(root);
 	    stage.setScene(scene);
 	    stage.show();
+	    
+	    // Llamada de los métodos del Controller
+	    myController.cargarEquipos();
 
 	}
 	  public static void main(String[] args) {
