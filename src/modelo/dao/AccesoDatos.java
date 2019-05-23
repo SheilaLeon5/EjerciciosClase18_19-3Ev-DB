@@ -403,7 +403,7 @@ public class AccesoDatos {
 				}
 				
 				for (Equipo equipo : list) {
-					System.out.println(equipo);
+					//System.out.println(equipo);
 				}
 				
 			} catch (SQLException e) {

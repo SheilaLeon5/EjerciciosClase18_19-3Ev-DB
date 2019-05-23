@@ -9,7 +9,7 @@ import javafx.scene.control.ComboBox;
 import javafx.stage.Stage;
 import modelo.Equipo;
 
-public class ComboEjemplo extends Application {
+public class ComboMain extends Application {
 
 	public void start(Stage stage) throws Exception {
 //
@@ -21,8 +21,19 @@ public class ComboEjemplo extends Application {
 	    stage.setScene(scene);
 	    stage.show();
 	    
+	    
+	    
 	    // Llamada de los métodos del Controller
-	    myController.cargarEquipos();
+	    /*
+	     * Explicación: 
+	     * 		Se utiliza la llamada al método cuando NO implementamos 'Initializable'.
+	     * 		Por ejemplo el código que nos permite ver los equipos en el ComboBox 
+	     * 		estaría en un método y ese nombre del método a su vez en un OnAction del 
+	     * 		comboBox y además en el main haciendo la llamada.
+	     * 
+	     * 		myController.muestraIdEquipo();
+	     */
+
 
 	}
 	  public static void main(String[] args) {

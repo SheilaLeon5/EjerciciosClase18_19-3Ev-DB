@@ -7,7 +7,7 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="combo.ComboController">
    <children>
-      <ComboBox fx:id="miCombo" layoutX="35.0" layoutY="122.0" onAction="#cargarEquipos" prefWidth="150.0" />
+      <ComboBox fx:id="miCombo" layoutX="35.0" layoutY="122.0" onAction="#muestraIdEquipo" prefWidth="150.0" />
       <Text fill="#e81d1d" layoutX="35.0" layoutY="63.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Liga Española (Primera División)">
          <font>
             <Font size="27.0" />
