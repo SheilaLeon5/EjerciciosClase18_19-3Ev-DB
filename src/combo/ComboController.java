@@ -11,17 +11,22 @@ import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.ComboBox;
+import javafx.scene.control.ListView;
 import modelo.Equipo;
+import modelo.Jugador;
 import modelo.dao.AccesoDatos;
 
 public class ComboController implements Initializable {
 	@FXML
 	private ComboBox<Equipo> miCombo;
+	
+	@FXML
+	private ListView<Jugador>  lv_jugadores;
 
 	
 
 	@Override
-	//Breve Explicación: Este método se inicializa solo sin necesidad de añadir onAction
+	//Breve Explicación: Este método se inicializa solo sin necesidad de añadir onAction en ComboBox
 	
 	public void initialize(java.net.URL location, ResourceBundle resources) {
 
@@ -44,9 +49,11 @@ public class ComboController implements Initializable {
 	
 	
 	
-	public void muestraIdEquipo() {
+	public void cargaJugadoresSegunIdEquipo() {
 		int idEquipo = miCombo.getValue().getIdEquipo();
 		System.out.println("Ha seleccionado el equipo... " + idEquipo);
+		lv_jugadores.getItems().clear();
+		lv_jugadores.getItems().addAll((AccesoDatos.getPlayersByTeams("Liga", "jugadores", idEquipo)));
 		
 	}
 	

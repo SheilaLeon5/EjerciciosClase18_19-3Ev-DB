@@ -2491,6 +2491,21 @@ public class Ejercicios {
 	public static void main(String[]args){
 		
 		AccesoDatos activitiesDates = new AccesoDatos();
+		
+		ArrayList<Equipo> resultado = activitiesDates.generaClasificacion();
+		
+		activitiesDates.insertMatch2FromFile(resultado);
+		//HashMap<Equipo, String> probando = activitiesDates.createTeamsMapFromDB();
+		//activitiesDates.insertMatchFromFile("ficheros/partidos.txt");
+
+		
+		
+		
+		
+		
+		
+		//ArrayList<Equipo> listaEquipos = activitiesDates.crearListadoEquiposDesdeBBDD("liga", "Equipos");
+		
 
 		//ArrayList<Jugador> players = activitiesDates.getPlayersByTeams("liga", "jugadores", 4);
 		
@@ -2526,6 +2541,45 @@ public class Ejercicios {
 		
 		
 /*
+ 	//28/05/2019--------ACTIVIDAD: Insertar datos (algunos null) desde fichero a tabla de la bd -----------------------------------------			
+	AccesoDatos activitiesDates = new AccesoDatos();
+	activitiesDates.insertMatchFromFile2("ficheros/partidos.txt");
+ 
+ 
+ 
+ 	//28/05/2019-------- Insertar datos (algunos null) desde fichero a tabla de la bd -----------------------------------------			
+	AccesoDatos activitiesDates = new AccesoDatos();
+	activitiesDates.insertMatchFromFile("ficheros/partidos.txt");
+ 
+ 
+ 
+ 	//25/05/2019--------Insertar en tabla equipos de la BD el arrayLsit generado por 'generaClasificacion' -----------------------------------
+
+ 
+ 
+ 
+ 
+ 
+	//25/05/2019------- Obtener un arrayList de los equipos con su clasifiacion -----------------------------------------
+	AccesoDatos activitiesDates = new AccesoDatos();
+	activitiesDates.generaClasificacion();
+ 	
+ 	//25/05/2019--------Método crea partidos (utilizado por el método siguiente: generaClasificacion) -----------------------------------------
+
+ 
+ 
+ 	//25/05/2019--------ACTIVIDAD: Obtener un HashMap de Equipos obteniendo datos desde la BD -----------------------------------------
+	AccesoDatos activitiesDates = new AccesoDatos();
+ 	HashMap<Equipo, String> probando = activitiesDates.createTeamsMapFromDB();
+ 
+ 
+ 
+ 	//25/05/2019--------ACTIVIDAD: Obtener un ArrayList de Equipos obteniendo datos desde la BD -----------------------------------------			
+	AccesoDatos activitiesDates = new AccesoDatos();
+	ArrayList<Equipo> listaEquipos = activitiesDates.crearListadoEquiposDesdeBBDD("liga", "Equipos");
+ 
+ 
+ 
  	//15/05/2019--------ACTIVIDAD: Obtener una lista de jugadores determinado -----------------------------------------
 	AccesoDatos activitiesDates = new AccesoDatos();
 	ArrayList<Jugador> players = activitiesDates.getPlayersByTeams("liga", "jugadores", 4);

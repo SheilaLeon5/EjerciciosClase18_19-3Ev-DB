@@ -2,7 +2,7 @@ package modelo;
 
 import java.io.Serializable;
 
-public class Equipo implements Serializable /*Comparable<Equipo>*/ {
+public class Equipo implements /*Serializable*/ Comparable<Equipo> {
 	private int idEquipo;
 	private String nombreCorto;
 	private String nombre;
@@ -30,6 +30,20 @@ public class Equipo implements Serializable /*Comparable<Equipo>*/ {
 	}
 	
 	
+	public Equipo(int idEquipo, String nombreCorto, String nombre, int puntos, int pj, int pg, int pe, int pp, int gf,
+			int gc) {
+		super();
+		this.idEquipo = idEquipo;
+		this.nombreCorto = nombreCorto;
+		this.nombre = nombre;
+		this.puntos = puntos;
+		this.pj = pj;
+		this.pg = pg;
+		this.pe = pe;
+		this.pp = pp;
+		this.gf = gf;
+		this.gc = gc;
+	}
 
 
 	// Redefinimos el método toString de Object   30/01/2019
@@ -57,7 +71,7 @@ public class Equipo implements Serializable /*Comparable<Equipo>*/ {
 	}
 	*/
 
-/*	@Override
+	@Override	
 	public int compareTo(Equipo eq) {
 		if (this.getPuntos() > eq.getPuntos())
 			return -1;
@@ -71,7 +85,7 @@ public class Equipo implements Serializable /*Comparable<Equipo>*/ {
 			return -1;
 		return -1;
 	}
-	*/
+	
 	
 	
 	
