@@ -13,6 +13,7 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.Map;
 
 import javax.print.attribute.HashAttributeSet;
 
@@ -785,7 +786,48 @@ public class AccesoDatos {
 						}
 					}
 				
+			
+			
 				
+		//--------ACTIVIDAD: Insertar datos del HashMap(Llamado por un método que crea HM desde fichero) a la BD -----------------------------------------05/06/2019			
+	
+		// ACTIVIDAD POR MI CUENTA		
+		public void añadirDatosBDDesdeHashMap() {
+			Ejercicios ejercicios = new Ejercicios();
+			HashMap<String, Jugador> mapaJuagadores = ejercicios.creaMapaJugadores("ficheros/jugadores.txt");
+
+			try {
+				BaseDatos db = new BaseDatos("localhost","prueba","root","1q2w3e4r");
+				Connection connection = db.getConnection();     //Obtener la conexión
+				Statement stmt = connection.createStatement();
+				
+				
+				
+				for(Map.Entry<String, Jugador> jugador : mapaJuagadores.entrySet()) {
+					String key = jugador.getKey();
+					Jugador value = jugador.getValue();
+					
+					int idJugador = value.getIdJugador();
+					String nombre = value.getNombre();
+					int dorsal = value.getDorsal();
+					int idEquipo= value.getCodigoEquipo();
+					
+					String sql ="INSERT INTO jugadores VALUES (";
+					sql += ""+idJugador+",\""+nombre+"\","+dorsal+","+idEquipo+" )";
+					
+					System.out.println(sql);
+					stmt.executeUpdate(sql);
+				}
+
+				//while() {
+					
+				//}
+				
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
 				
 				
 				

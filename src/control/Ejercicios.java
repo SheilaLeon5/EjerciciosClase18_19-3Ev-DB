@@ -2491,12 +2491,15 @@ public class Ejercicios {
 	public static void main(String[]args){
 		
 		AccesoDatos activitiesDates = new AccesoDatos();
+		Ejercicios ejercicios  = new Ejercicios();
 		
-		ArrayList<Equipo> resultado = activitiesDates.generaClasificacion();
+		activitiesDates.añadirDatosBDDesdeHashMap();
+		//ArrayList<Equipo> resultado = activitiesDates.generaClasificacion();
+		//activitiesDates.insertMatch2FromFile(resultado);
 		
-		activitiesDates.insertMatch2FromFile(resultado);
+		
 		//HashMap<Equipo, String> probando = activitiesDates.createTeamsMapFromDB();
-		//activitiesDates.insertMatchFromFile("ficheros/partidos.txt");
+		
 
 		
 		
@@ -2541,20 +2544,27 @@ public class Ejercicios {
 		
 		
 /*
+ 	//05/06/2019--------ACTIVIDAD: Insertar datos del HashMap(Llamado por un método que crea HM desde fichero) a la BD ----------------------------			
+	AccesoDatos activitiesDates = new AccesoDatos();
+	activitiesDates.añadirDatosBDDesdeHashMap();
+ 	
+ 
+ 
  	//28/05/2019--------ACTIVIDAD: Insertar datos (algunos null) desde fichero a tabla de la bd -----------------------------------------			
 	AccesoDatos activitiesDates = new AccesoDatos();
 	activitiesDates.insertMatchFromFile2("ficheros/partidos.txt");
  
  
  
- 	//28/05/2019-------- Insertar datos (algunos null) desde fichero a tabla de la bd -----------------------------------------			
+ 	//28/05/2019--------ACTIVIDAD: Insertar datos (algunos null) desde fichero a tabla de la bd -----------------------------------------			
 	AccesoDatos activitiesDates = new AccesoDatos();
 	activitiesDates.insertMatchFromFile("ficheros/partidos.txt");
  
  
  
- 	//25/05/2019--------Insertar en tabla equipos de la BD el arrayLsit generado por 'generaClasificacion' -----------------------------------
-
+ 	//25/05/2019--------ACTIVIDAD: Insertar en tabla equipos2 de la BD el arrayLsit generado por 'generaClasificacion' -----------------------------------
+	AccesoDatos activitiesDates = new AccesoDatos();
+	activitiesDates.insertMatch2FromFile("ficheros/partidos.txt");
  
  
  
