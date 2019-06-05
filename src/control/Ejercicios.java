@@ -24,6 +24,7 @@ import java.util.Collection;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
@@ -2488,12 +2489,53 @@ public class Ejercicios {
 
 	
 	
+	//--------ACTIVIDAD: Desde un hashMap crear un fichero-----------------------------------------05/06/2019
+	//POR MI CUENTA
+		public void  crearFicheroDesdeHM(String rutaFichero) {	
+			Ejercicios ejercicio = new Ejercicios();
+			HashMap<String, Jugador> mapaJugadores = ejercicio.creaMapaJugadores("ficheros/jugadores.txt");
+			try {
+				FileWriter fichero = new FileWriter(rutaFichero);
+
+				for (Map.Entry<String, Jugador> entry : mapaJugadores.entrySet()) {
+					String key = entry.getKey();
+					Jugador value = entry.getValue();
+					System.out.println(key + "#" + value);
+					String linea= ""+key+"#"+value+"\n";
+					 fichero.write(linea);
+				}	
+				
+		/*		
+				for(String clave : mapaJugadores.keySet()) {
+					 Jugador key = mapaJugadores.get(clave);  //obtener clave
+					//System.out.println(clave.toString());
+					Collection<Jugador> value = mapaJugadores.values();  //obtener valor de todos
+					
+
+					String linea=""+key+"#"+value+"";
+					System.out.println(linea);
+					//fichero.write(linea);
+				}
+		 */				
+				fichero.close();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+	
+	
+
+	
+	
+	
 	public static void main(String[]args){
 		
 		AccesoDatos activitiesDates = new AccesoDatos();
 		Ejercicios ejercicios  = new Ejercicios();
+		ejercicios.crearFicheroDesdeHM("ficheros/nuevofic.txt");
 		
-		activitiesDates.añadirDatosBDDesdeHashMap();
+		//activitiesDates.añadirDatosBDDesdeHashMap();
 		//ArrayList<Equipo> resultado = activitiesDates.generaClasificacion();
 		//activitiesDates.insertMatch2FromFile(resultado);
 		

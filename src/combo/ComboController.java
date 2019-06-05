@@ -1,5 +1,6 @@
 package combo;
 
+import java.io.File;
 import java.util.ResourceBundle;
 
 import javax.print.DocFlavor.URL;
@@ -12,6 +13,8 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.ListView;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import modelo.Equipo;
 import modelo.Jugador;
 import modelo.dao.AccesoDatos;
@@ -23,7 +26,6 @@ public class ComboController implements Initializable {
 	@FXML
 	private ListView<Jugador>  lv_jugadores;
 
-	
 
 	@Override
 	//Breve Explicación: Este método se inicializa solo sin necesidad de añadir onAction en ComboBox
@@ -48,6 +50,7 @@ public class ComboController implements Initializable {
 	
 	
 	
+	// ----- MOSTRAR UNA LISTA DE JUGADORES SEGÚN EL EQUIPO SELECCIONADO en comboBox---- 22/05/2019
 	
 	public void cargaJugadoresSegunIdEquipo() {
 		int idEquipo = miCombo.getValue().getIdEquipo();
@@ -58,7 +61,10 @@ public class ComboController implements Initializable {
 	}
 	
 	
-	// ----- MOSTRAR UNA LISTA DE JUGADORES SEGÚN EL EQUIPO SELECCIONADO en comboBox---- 22/05/2019
+	
+
+	
+	
 
 	
 	
